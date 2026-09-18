@@ -104,7 +104,7 @@ class CallActivity : SimpleActivity() {
         disableProximitySensor()
 
         if (screenOnWakeLock?.isHeld == true) {
-            screenOnWakeLock!!.release()
+            screenOnWakeLock?.release()
         }
     }
 
@@ -865,7 +865,7 @@ class CallActivity : SimpleActivity() {
 
     private fun disableProximitySensor() {
         if (proximityWakeLock?.isHeld == true) {
-            proximityWakeLock!!.release()
+            proximityWakeLock?.release()
         }
     }
 
