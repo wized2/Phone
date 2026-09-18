@@ -850,7 +850,7 @@ class CallActivity : SimpleActivity() {
         try {
             val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
             screenOnWakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "org.fossify.phone:full_wake_lock")
-            screenOnWakeLock!!.acquire(5 * 1000L)
+            screenOnWakeLock?.acquire(5 * 1000L)
         } catch (e: Exception) {
         }
     }
@@ -859,7 +859,7 @@ class CallActivity : SimpleActivity() {
         if (!config.disableProximitySensor && (proximityWakeLock == null || proximityWakeLock?.isHeld == false)) {
             val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
             proximityWakeLock = powerManager.newWakeLock(PowerManager.PROXIMITY_SCREEN_OFF_WAKE_LOCK, "org.fossify.phone:wake_lock")
-            proximityWakeLock!!.acquire(60 * MINUTE_SECONDS * 1000L)
+            proximityWakeLock?.acquire(60 * MINUTE_SECONDS * 1000L)
         }
     }
 
